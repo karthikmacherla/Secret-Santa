@@ -4,15 +4,15 @@ var User = require('../models/user.js');
 
 //GETS
 router.get('/login', function(req, res, next) {
-	res.render('login', {invalidUserName: false}); 
+	res.render('loginrevised', {invalidUserName: false}); 
 });
 
 router.get('/signup', function(req, res, next) {
-	res.render('signup');
+	res.render('signuprevised');
 })
 
 router.get('/logout', function (req, res, next) {
-	req.session.user = '';
+	req.session.user = false;
 	res.redirect('/');
 })
 
@@ -23,12 +23,14 @@ router.post('/login', function(req, res, next) {
 	var username = req.body.username;
 	var password = req.body.password;
 	User.findOne({ username, password }, function (err, result) {
-		if (err)
-			res.redirect('login', {invalidUserName: true});
-		req.session.user = username;
-		res.redirect('/')
+		if (err || result == null)
+			res.render('loginrevised', {invalidUserName: true});
+		else {
+			req.session.user = result;
+			res.redirect('/');
+		}
 	})
-}) 
+})
 
 
 router.post('/signup', function(req, res, next) {
@@ -46,7 +48,7 @@ router.post('/signup', function(req, res, next) {
 		if (err)
 			next(err)
 		else
-			res.redirect('/account/login')
+			res.redirect('/account/login');
 	});
 })
 

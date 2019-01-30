@@ -1,0 +1,14 @@
+body {
+		background-image: url("../img/homescreen.png");
+		background-size:     cover;                     
+    	background-repeat:   no-repeat;
+    	background-position: center center;
+    	color: white;
+}
+
+.group-content {
+	padding: 1% 0 1% 1%;
+	display: none;
+	border-width: 1px;
+	border-style: none ridge none ridge;
+}

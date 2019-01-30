@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
 	lastName: { type: String }, 
 	username: { type: String }, 
 	password: { type: String },
-	groups: [{ groupName: String, isAdmin: Boolean}]//obj is an array of groups
+	groups: [{ groupCode: String, isAdmin: Boolean}]//obj is an array of groups
 	// containing whether admin or not
 })
 

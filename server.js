@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var cookieSession = require('cookie-session');
 var account = require('./routes/account.js');
+var api = require('./routes/api.js');
 
 //boiler plate
 var app = express();
@@ -24,10 +25,15 @@ app.use(cookieSession({
 }))
 
 app.get('/', function(req, res, next){
-	res.render('index', {user: req.session.user});
+  if (!req.session.user)
+    res.render('splashscreen', {user: req.session.user});
+  else
+    res.render('homescreen', {user: req.session.user});
 });
 
+
 app.use('/account', account);
+app.use('/api', api);
 
 app.use(function (err, req, res, next) {
 	return res.send('ERROR : ' + err.message);

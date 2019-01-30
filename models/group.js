@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 
 const groupSchema = new mongoose.Schema({
-	groupName: { type: String },
 	groupCode: { type: String },
 	admin: { type: String }, 
-	users: { type: Object }, //array of userNames
-	assignments: [{ type: String }] // 2d array of userNames
+	users: [{ type: String }], //array of userNames
+  usersByName: [{type: String}],
+	assignments: [{ username: String, fullName: String }] //array of assignments (the prev person is their secret santa)
 })
 
 module.exports = mongoose.model('Group', groupSchema);
