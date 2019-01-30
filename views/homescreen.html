@@ -15,21 +15,21 @@
 		<a href="account/login">Log in</a> / <a href="account/signup">Sign up</a>
 	  <% } else { %> 
 	  <a href="account/logout" style="padding-left: 95%">Log out</a> 
-	  <h3>Welcome <%= user.firstName + ' ' + user.lastName %></h3> 
-
-	    <div class="list-group" id="list-of-groups">
+	  <h3>Welcome <%= user.firstName + ' ' + user.lastName %></h3> <br>
+	  	<h4>My Groups: </h4>
+	    <div class="list-group" id="list-of-groups">`
 	   
 	    </div>
 	    <div class="group-functionality row">
 	    	<div class="create-group col-lg-4">
-		    	<h4>Create Group: </h4>
+		    	<h4><em>Create Group: </em></h4>
 		    	<label for="newGroupCode">Group Code</label>
 		    	<input type="text" id="new-group-code" class="form-control" name="groupCode" placeholder="Insert Group Code Here">
 		    	<br> <button class="btn btn-sm btn-primary" id="create-group">Create Group</button>
 				<p style="color: red; display: none" id="create-group-err-message">Group Name exists!</p>
 			</div>
 			<div class="join-group col-lg-4">
-				<h4 >Join Group: </h4> 
+				<h4 > <em> Join Group: </em> </h4> 
 				<label for="existingGroupCode">Group Code</label> 
 				<input type="text" name="groupCode" class="form-control" placeholder="Insert Group Code Here" id="existing-group-code">
 				<br>
