@@ -13,9 +13,11 @@ Try and guess what your friend wanted along!
 ## Demo
 
 ![Alt text](img/splashscreen.png) 
+
 ![Alt text](img/existing-user.png)
-![Alt text](img/homescreen.png)
+
 ![Alt text](img/homescreen1.png)
+
 ![Alt text](img/homescreen2.png)
 
 
