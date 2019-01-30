@@ -4,7 +4,7 @@
 
 In this application, use our generator to randomly assign each person in your group a secret santa.
 
-But, there is a *twist*
+But, there is a *twist*,
 
 No wish list may be used, but your "top pick" may be added anonymously to your group's top picks.
 
